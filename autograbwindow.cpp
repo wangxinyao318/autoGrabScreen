@@ -29,10 +29,10 @@ void autoGrabWindow::keyPressEvent(QKeyEvent * ev)
 void autoGrabWindow::grab()
 {
 	QPixmap fullScreenPixmap = QPixmap::grabWindow(QApplication::desktop()->winId());
-	QString strDateTime = QDateTime::currentDateTime().toString("yyyyMMdd_HHmmss");
-	strDateTime += ".jpg";
+	QString strDateTime = QDateTime::currentDateTime().toString("yyyyMMdd_HHmmss_zzz");
+	strDateTime += ".png";
 	strDateTime.push_front("pic/");
-	fullScreenPixmap.save(strDateTime, "JPG");
+	fullScreenPixmap.save(strDateTime, "PNG");
 }
 
 void autoGrabWindow::timeOut()
